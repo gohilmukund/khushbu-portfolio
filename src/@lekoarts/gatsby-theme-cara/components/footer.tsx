@@ -32,7 +32,7 @@ const Footer = () => {
         }}
       >
         {/* <img width="30" height="30" src="https://img.lekoarts.de/gatsby/logo_w30.png" alt="LekoArts Logo" /> */}
-        <SVG icon="keyy" width={30} color="icon_blue" left="80" top="10" />
+        <SVG icon="keyy" width={30} color="icon_blue" left="50%" top="10" />
         {/* {` `}
         <Link
           aria-label="Link to the theme's GitHub repository"

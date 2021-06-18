@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Box, Flex, Link, useColorMode, jsx } from "theme-ui"
+import SVG from "./svg"
 
 const Footer = () => {
   const [colorMode, setColorMode] = useColorMode()
@@ -31,7 +32,8 @@ const Footer = () => {
         }}
       >
         <img width="30" height="30" src="https://img.lekoarts.de/gatsby/logo_w30.png" alt="LekoArts Logo" />
-        {` `}
+        <SVG icon="keyy" hiddenMobile width={16} color="icon_blue" left="80%" top="10%" />
+        {/* {` `}
         <Link
           aria-label="Link to the theme's GitHub repository"
           sx={{ ml: 2 }}
@@ -43,7 +45,7 @@ const Footer = () => {
         {` `}
         <Link aria-label="Link to the theme author's website" href="https://www.lekoarts.de/en">
           LekoArts
-        </Link>
+        </Link> */}
       </Flex>
     </Box>
   )

@@ -25,27 +25,16 @@ const Footer = () => {
         sx={{
           justifyContent: `center`,
           alignItems: `center`,
-          mt: 3,
+          mt: 4,
           color: `text`,
           fontWeight: `semibold`,
+          height: '40px',
           a: { color: `text` },
+          outerHeight: 100
         }}
       >
-        {/* <img width="30" height="30" src="https://img.lekoarts.de/gatsby/logo_w30.png" alt="LekoArts Logo" /> */}
-        <SVG icon="keyy" width={30} color="icon_blue" left="50%" top="10" />
-        {/* {` `}
-        <Link
-          aria-label="Link to the theme's GitHub repository"
-          sx={{ ml: 2 }}
-          href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-cara"
-        >
-          Theme
-        </Link>
-        <div sx={{ mx: 1 }}>by</div>
-        {` `}
-        <Link aria-label="Link to the theme author's website" href="https://www.lekoarts.de/en">
-          LekoArts
-        </Link> */}
+        <SVG icon="keyy" width={60} color="icon_purple" left="40%" top="10" />
+        
       </Flex>
     </Box>
   )

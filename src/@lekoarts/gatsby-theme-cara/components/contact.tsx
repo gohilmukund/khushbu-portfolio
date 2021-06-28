@@ -9,6 +9,8 @@ import { UpDown, UpDownWide, waveAnimation } from "../styles/animations"
 import Footer from "./footer"
 // @ts-ignore
 import ContactMDX from "../sections/contact"
+// @ts-ignore
+import SocialMDX from "../sections/social.mdx"
 
 const InnerWave = styled.div`
   path {
@@ -35,11 +37,27 @@ const Contact = ({ offset, factor = 1 }: { offset: number; factor?: number }) =>
       </div>
     </Divider>
     <Content speed={0.4} offset={offset} factor={factor}>
-      <Inner>
+      <Inner sx={{paddingBottom:'150px'}}>
         <ContactMDX />
+      
+        <div sx={{
+              display: `grid`,
+              gridGap: 5,
+              // width:'30%',
+              gridTemplateColumns: `repeat(5, 1fr)`,
+            }} style={{width:'30%'}}>
+          <a href="mailto:khushsolanki19@gmail.com" style={{padding:'10px'}}><SVG icon="mail" width={10} color="icon_yellow" /></a>          
+          <a href="https://www.linkedin.com/in/solanki-khushbu/" style={{padding:'10px'}}><SVG icon="linkedin" width={8} color="icon_yellow" /></a>
+          <a href="https://www.instagram.com/khushbu190595/" style={{padding:'10px'}}><SVG icon="insta" width={8} color="icon_yellow" /></a>
+          <a href="./Khushbu-Resume.pdf" style={{padding:'10px'}}><SVG icon="download" width={8} /></a>
+          {/* <a href="mailto:khushsolanki19@gmail.com"><SVG icon="whatsapp" width={8} color="icon_yellow" left='30%' /></a>        */}
+        </div>        
+      
       </Inner>
-      <Footer />
+        <Footer />
     </Content>
+      
+        
     <Divider speed={0.1} offset={offset} factor={factor}>
       <UpDown>
         <SVG icon="upDown" hiddenMobile width={8} color="icon_darkest" left="70%" top="20%" />

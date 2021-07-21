@@ -5,11 +5,12 @@ import { jsx } from "theme-ui"
 type ProjectCardProps = {
   link: string
   title: string
+  note: string
   children: React.ReactNode
   bg: string
 }
 
-const ProjectCard = ({ link, title, children, bg }: ProjectCardProps) => (
+const ProjectCard = ({ link, title, note, children, bg }: ProjectCardProps) => (
   <a
     href={link}
     target="_blank"
@@ -33,6 +34,7 @@ const ProjectCard = ({ link, title, children, bg }: ProjectCardProps) => (
     }}
   >
     <div sx={{ opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)` }}>{children}</div>
+    <div sx={{ fontSize: [2, 3], opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)` }}>{note}</div>
     <div
       sx={{
         textTransform: `uppercase`,

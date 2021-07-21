@@ -15,9 +15,9 @@ const Footer = () => {
         sx={{ variant: `buttons.toggle`, fontWeight: `semibold`, display: `block`, mx: `auto`, mb: 3 }}
         onClick={toggleColorMode}
         type="button"
-        aria-label="Toggle dark mode"
+        aria-label="Check out the DarkSide"
       >
-        {isDark ? `Light` : `Dark`}
+        {isDark ? `Visit the Light` : `Visit the DarkSide`}
       </button>
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />

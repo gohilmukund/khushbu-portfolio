@@ -12,8 +12,6 @@ const theme = merge(tailwind, {
   config: {
     initialColorModeName: `dark`,
   },
-  // initialColorModeName: `dark`,
-  // useCustomProperties: true,
   colors: {
     primary: tailwind.colors.orange[4],
     secondary: tailwind.colors.indigo[6],
@@ -125,7 +123,6 @@ const theme = merge(tailwind, {
     px: [2, 3],
     py: [3, 4],
   },
-  
   layout: {
     container: {
       maxWidth: `5xl`,

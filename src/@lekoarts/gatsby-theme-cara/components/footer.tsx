@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Box, Flex, Link, useColorMode, jsx } from "theme-ui"
+import { Glow, GlowButton } from "../styles/animations"
 import SVG from "./svg"
 
 const Footer = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
 
   return (
     <Box as="footer" variant="footer">
-      <button
+      <GlowButton
         sx={{
           variant: `buttons.toggle`, 
           fontWeight: `semibold`, 
@@ -28,16 +29,11 @@ const Footer = () => {
         data-testid="color-mode-toggle"
       >
         {ButtonLabel}
-      </button>
-      <h2 className="glow" sx={{
-        textShadow: 'rgba(0, 0, 0, 0.75)',
-        textShadowOffset: { width: -1, height: 1 },
-        textShadowRadius: 15
-      }}>
-        MAY THE FORCE BE WITH YOU
-      </h2>
-      {/* Copyright &copy; {new Date().getFullYear()}. All rights reserved. */}
+      </GlowButton>
       <br />
+      <Glow>MAY THE FORCE BE WITH YOU</Glow>
+      {/* Copyright &copy; {new Date().getFullYear()}. All rights reserved. */}
+      
       <Flex
         sx={{
           justifyContent: `center`,

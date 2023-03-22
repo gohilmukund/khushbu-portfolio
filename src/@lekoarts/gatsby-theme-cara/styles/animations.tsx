@@ -60,3 +60,46 @@ export const UpDownWide = styled.div`
 export const waveAnimation = (length: string) => css`
   animation: ${wave} ${length} linear infinite alternate;
 `
+export const InnerWave = styled.div`
+  path {
+    ${waveAnimation(`20s`)};
+  }
+`
+
+const glow = keyframes`
+  from {
+    text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+  }
+  to {
+    text-shadow: 0 0 20px #eeeeee, 0 0 30px #EB212E, 0 0 40px #EB212E, 0 0 50px #EB212E, 0 0 60px #EB212E, 0 0 70px #EB212E, 0 0 80px #EB212E;
+  }
+`
+
+export const Glow = styled.h1`
+  animation: ${glow}
+  font-size: 70px;
+  font-style: italic;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  -webkit-animation: ${glow} 1s ease-in-out infinite alternate;
+  -moz-animation: ${glow} 1s ease-in-out infinite alternate;
+  animation: ${glow} 1s ease-in-out infinite alternate;
+`
+
+const glowButton = keyframes`
+  from {
+    box-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #EB212E, 0 0 50px #EB212E, 0 0 60px #EB212E, 0 0 70px #EB212E;
+  }
+  to {
+    box-shadow: 0 0 20px #eeeeee, 0 0 30px #2E67F8, 0 0 40px #2E67F8, 0 0 50px #2E67F8, 0 0 60px #2E67F8, 0 0 70px #2E67F8, 0 0 80px #2E67F8;
+  }
+`
+
+export const GlowButton = styled.button`
+  animation: ${glowButton}
+  text-align: center;
+  -webkit-animation: ${glowButton} 1s ease-in-out infinite alternate;
+  -moz-animation: ${glowButton} 1s ease-in-out infinite alternate;
+  animation: ${glowButton} 1s ease-in-out infinite alternate;
+`

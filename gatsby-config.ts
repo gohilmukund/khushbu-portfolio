@@ -1,30 +1,19 @@
-require(`dotenv`).config({
-  path: `.env`,
-})
+import type { GatsbyConfig, PluginRef } from "gatsby"
+import "dotenv/config"
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
-    // You can overwrite values here that are used for the SEO component
-    // Of course you can also add new values here to query them like usual
-    // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-cara/gatsby-config.js
-    
-    // Used for the title template on pages other than the index site
     siteTitle: `Khushbu Solanki`,
-    // Default title of the page
     siteTitleAlt: `Khushbu Solanki Portfolio`,
-    // Can be used for e.g. JSONLD
     siteHeadline: `Khushbu - Portfolio`,
-    // Will be used to generate absolute URLs for og:image etc.
     siteUrl: `https://www.khushbu.tk`,
-    // Used for SEO
     siteDescription: `Khushbu Solanki is a React native Developer. This Portfolio contain's her works.`,
-    // Will be set on the <html /> tag
     siteLanguage: `en`,
-    // Used for og:image and must be placed inside the `static` folder
     siteImage: `/banner.jpg`,
   },
+  trailingSlash: `never`,
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-cara`,
@@ -38,11 +27,22 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          process.env.GOOGLE_ANALYTICS_ID, // Google Analytics / GA
+          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ],
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Khushbu Solanki`,
+        name: `Khushbu Gohil`,
         short_name: `Khushbu`,
-        description: `Khushbu Solanki is a React native Developer. This Portfolio containers her works.`,
+        description: `Khushbu Gohil is a React native Developer. This Portfolio containers her works.`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#f6ad55`,
@@ -72,5 +72,7 @@ module.exports = {
         openAnalyzer: false,
       },
     },
-  ].filter(Boolean),
+  ].filter(Boolean) as Array<PluginRef>,
 }
+
+export default config

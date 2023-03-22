@@ -1,9 +1,19 @@
-import { merge } from "theme-ui"
-import { tailwind } from "@theme-ui/presets"
+import { merge, ThemeUIStyleObject } from "theme-ui"
+import tailwind from "@theme-ui/preset-tailwind"
+
+declare module "theme-ui" {
+  interface Theme {
+    footer?: ThemeUIStyleObject
+    texts?: ThemeUIStyleObject
+  }
+}
 
 const theme = merge(tailwind, {
-  initialColorModeName: `dark`,
-  useCustomProperties: true,
+  config: {
+    initialColorModeName: `dark`,
+  },
+  // initialColorModeName: `dark`,
+  // useCustomProperties: true,
   colors: {
     primary: tailwind.colors.orange[4],
     secondary: tailwind.colors.indigo[6],
@@ -37,15 +47,6 @@ const theme = merge(tailwind, {
     },
   },
   breakpoints: [`400px`, `600px`, `900px`, `1200px`, `1600px`],
-  footer: {
-    textAlign: `center`,
-    display: `block`,
-    position: `absolute`,
-    bottom: 0,
-    color: `textMuted`,
-    px: [2, 3],
-    py: [3, 4],
-  },
   styles: {
     root: {
       margin: 0,
@@ -115,6 +116,16 @@ const theme = merge(tailwind, {
       color: `heading`,
     },
   },
+  footer: {
+    textAlign: `center`,
+    display: `block`,
+    position: `absolute`,
+    bottom: 0,
+    color: `textMuted`,
+    px: [2, 3],
+    py: [3, 4],
+  },
+  
   layout: {
     container: {
       maxWidth: `5xl`,

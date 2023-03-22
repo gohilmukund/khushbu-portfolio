@@ -3,23 +3,40 @@ import { Box, Flex, Link, useColorMode, jsx } from "theme-ui"
 import SVG from "./svg"
 
 const Footer = () => {
-  const [colorMode, setColorMode] = useColorMode()
+  const [colorMode, setColorMode] = useColorMode<"light" | "dark">()
   const isDark = colorMode === `dark`
   const toggleColorMode = (e: any) => {
-    setColorMode(isDark ? `light` : `dark`)
+    const next = isDark ? `light` : `dark`
+    setColorMode(next)
   }
+
+  const ButtonLabel = isDark ? "Be the Light" : "Enter the Dark Side"
 
   return (
     <Box as="footer" variant="footer">
       <button
-        sx={{ variant: `buttons.toggle`, fontWeight: `semibold`, display: `block`, mx: `auto`, mb: 3 }}
+        sx={{
+          variant: `buttons.toggle`, 
+          fontWeight: `semibold`, 
+          display: `block`, 
+          mx: `auto`, 
+          mb: 3
+        }}
         onClick={toggleColorMode}
         type="button"
-        aria-label="Check out the DarkSide"
+        aria-label={ButtonLabel}
+        data-testid="color-mode-toggle"
       >
-        {isDark ? `Visit the Light` : `Visit the DarkSide`}
+        {ButtonLabel}
       </button>
-      Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+      <h2 className="glow" sx={{
+        textShadow: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: { width: -1, height: 1 },
+        textShadowRadius: 15
+      }}>
+        MAY THE FORCE BE WITH YOU
+      </h2>
+      {/* Copyright &copy; {new Date().getFullYear()}. All rights reserved. */}
       <br />
       <Flex
         sx={{
@@ -34,7 +51,7 @@ const Footer = () => {
         }}
       >
         <SVG icon="keyy" width={60} color="icon_purple" left="40%" top="10" />
-        
+
       </Flex>
     </Box>
   )

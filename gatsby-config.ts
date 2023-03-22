@@ -35,6 +35,9 @@ const config: GatsbyConfig = {
           // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
+        pluginConfig: {
+          head: true
+        }
       }
     },
     {
@@ -61,6 +64,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-netlify`,

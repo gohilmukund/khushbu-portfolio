@@ -5959,7 +5959,7 @@ gatsby-plugin-page-creator@^5.8.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
-gatsby-plugin-theme-ui@~0.15.3:
+gatsby-plugin-theme-ui@^0.15.5, gatsby-plugin-theme-ui@~0.15.3:
   version "0.15.5"
   resolved "https://registry.npmjs.org/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.15.5.tgz"
   integrity sha512-5aCEv3OyT0w5UCrEkoWw8yjWHsw3jDZRTd181WXDBJX0HdLSxHwD4lNMsSW+taVF55112LBATjTUq1yRdo9FsQ==

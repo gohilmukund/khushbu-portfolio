@@ -9,7 +9,7 @@ type LayoutProps = { children: React.ReactNode; className?: string }
 const Layout = ({ children, className = `` }: LayoutProps) => (
   <React.Fragment>
     <Global
-      styles={(t) => ({
+      styles={(theme) => ({
         "*": {
           boxSizing: `inherit`,
           "&:before": {
@@ -34,14 +34,13 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           display: `none`,
         },
         "::selection": {
-          backgroundColor: get(t, `colors.primary`),
-          color: get(t, `colors.background`),
+          backgroundColor: theme.colors.primary,
+          color: theme.colors.background,
         },
       })}
     />
-    <MDXProvider components={MdxComponents}>
-      <main className={className}>{children}</main>
-    </MDXProvider>
+    <SEO />
+    <main className={className}>{children}</main>
   </React.Fragment>
 )
 

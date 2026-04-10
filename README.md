@@ -29,6 +29,44 @@ Also be sure to checkout other [Free & Open Source Gatsby Themes](https://themes
 - react-spring parallax effect
 - CSS Animations on Shapes
 
+## Firebase Hosting
+
+This site is a static Gatsby build, so you can host it on Firebase Hosting.
+
+1. Install dependencies with npm:
+
+```sh
+npm install
+```
+
+2. Update `.firebaserc` with your Firebase project id:
+
+```json
+{
+  "projects": {
+    "default": "your-firebase-project-id"
+  }
+}
+```
+
+3. Login to Firebase CLI (one-time):
+
+```sh
+npx firebase login
+```
+
+4. Build and deploy:
+
+```sh
+npm run firebase:deploy
+```
+
+5. Optional local Firebase hosting emulator:
+
+```sh
+npm run firebase:serve
+```
+
 ## 🚀 Getting Started
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-portfolio-cara) [![Edit gatsby-starter-portfolio-cara](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-portfolio-cara/tree/master/)

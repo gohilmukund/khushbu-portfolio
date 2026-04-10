@@ -8,11 +8,13 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
-    "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
+    "develop:cypress": "cross-env CYPRESS_SUPPORT=y npm run develop",
+    "build:cypress": "cross-env CYPRESS_SUPPORT=y npm run build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "firebase:serve": "firebase emulators:start --only hosting",
+    "firebase:deploy": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@babel/core": "^7.21.3",
@@ -46,6 +48,7 @@
     "@types/react-dom": "^18.0.11",
     "@types/theme-ui": "^0.6.0",
     "cross-env": "^7.0.3",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "firebase-tools": "^14.4.0"
   }
 }
